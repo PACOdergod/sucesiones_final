@@ -9,11 +9,7 @@ main(List<String> args) {
 }
 
 Map obtOrden(List f) {
-  // print(f);
-  // TODO: revisar que solo regrese los primeros parentesis que deben resolverse
-  // TODO: cuando el ultimo elemento es un parentesis falla
-
-  // los ( == )
+  //TODO:verificar que los ( == )
 
   var indexA = [];
   int auxi = 0;

@@ -1,35 +1,20 @@
-import "package:test/test.dart";
+import 'ope.dart' as ope;
+import 'obt_orden.dart' as obtOrd;
 
 main(List<String> args) {
-  // test("limpriar parentesis", () {
-  //   // Arrange
-  //   List<dynamic> expected = [3, '+', 4, '+', 5, '*', 3, '*', 4, '*', 2.0, ' '];
+  var f = '(  2)2*7*3+4(1+5(    9)(    2)+4)';
+  List f1 = ope.convertStL(f);
+  var m = obtOrd.obtOrden(f1);
+  print(f1);
+  // print(m);
 
-  //   // Act
-  //   var actual = limpParentesis(f, map);
-
-  //   // Asset
-  //   expect(actual, expected);
-  // });
-
-  var a = limpParentesis(f2, map2);
+  var a = limpParentesis(f1, m);
   print(a);
 }
 
-List f = [3, '+', 4, '+', 5, '*', 3, '*', 4, '(', 2.0, ')'];
-
-List f2 = [3, '+', 4, '+', 5, '*', 3, '*', 4, '(', 2.0, ')', '(', 7, ')', 3];
-Map map2 = {
-  0: [9, 11],
-  1: [12, 14]
-};
-
-Map map = {
-  0: [9, 11]
-};
-
 List limpParentesis(List f, Map map) {
-  // TODO: quitar los () que no son necesarios
+  // TODO: dejar parentesis cuando el numero interior
+  // sea negativo
 
   var parenList = [];
 
@@ -45,37 +30,39 @@ List limpParentesis(List f, Map map) {
   } else {
     loop:
     for (var i = 0; i < parenList.length; i++) {
-      int index = parenList[i];
-      var actual = f[index];
+      int actualIndex = parenList[i];
+      var actualList = f[actualIndex];
+      print(actualIndex);
 
       if (parenList[i] == largo) {
-        if (actual == ')') {
+        if (actualList == ')') {
           f.removeLast();
         }
         break loop;
       }
-      if (i == 0 && actual == '(') {
-        f.replaceRange(index, index + 1, [' ']);
+      if (actualIndex == 0 && actualList == '(') {
+        f.replaceRange(actualIndex, actualIndex + 1, [' ']);
         continue loop;
       }
 
-      if (actual == '(') {
-        var anterior = f[index - 1];
+      if (actualList == '(') {
+        var anterior = f[actualIndex - 1];
+        print(anterior);
 
         // si tiene un parentesis anterio lo cambia por *
         // si tiene un numero lo cambia por *
         // si no lo elimina
 
         if (anterior is num) {
-          f.replaceRange(index, index + 1, ['*']);
+          f.replaceRange(actualIndex, actualIndex + 1, ['*']);
         } else if (anterior == ')') {
-          f.replaceRange(index - 1, index + 1, [' ', '*']);
+          f.replaceRange(actualIndex - 1, actualIndex + 1, [' ', '*']);
         } else {
-          f.replaceRange(index, index + 1, [' ']);
+          f.replaceRange(actualIndex, actualIndex + 1, [' ']);
         }
       }
-      if (actual == ')') {
-        var siguiente = f[index + 1];
+      if (actualList == ')') {
+        var siguiente = f[actualIndex + 1];
 
         // si tiene parentesis siuiente lo dejara igual
         // si es un numero cambiara este por *
@@ -83,17 +70,17 @@ List limpParentesis(List f, Map map) {
         // print('cierre');
 
         if (siguiente is num) {
-          f.replaceRange(index, index + 1, ['*']);
+          f.replaceRange(actualIndex, actualIndex + 1, ['*']);
         } else if (siguiente == '(') {
-          f.replaceRange(index, index + 1, [')']);
+          f.replaceRange(actualIndex, actualIndex + 1, [')']);
         } else {
-          f.replaceRange(index, index + 1, [' ']);
+          f.replaceRange(actualIndex, actualIndex + 1, [' ']);
         }
       }
     }
   }
   f.removeWhere((element) => element == ' ');
-  print(f);
+  // print(f);
 
   return f;
 }

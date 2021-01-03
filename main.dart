@@ -4,14 +4,13 @@ import 'utils/obt_orden.dart' as obtOrd;
 import 'utils/resolv_ope.dart';
 
 main(List<String> args) {
-  // _expression_creation_and_evaluation();
-  // _expression_simplification_and_differentiation();
-  // _custom_function_definition_and_use();
+  //TODO: debe recibir numeros de 2 digitos
 
-  var s1 = [2, 3, 7, 20, 32, 43];
-  var s2 = [1, 7, 11];
+  // var s1 = [2, 3, 7, 20, 32, 43];
+  // var s2 = [1, 7, 11];
 
-  var f = '9*3*4(2/7*3)';
+  // var f = '9*3*4(2/7*3)';
+  var f = '2*7*3+4(1+5(4+3*9)(1+4/2)+4)';
 
   resolverForm(f);
 }
