@@ -11,10 +11,12 @@
 //   print(r);
 // }
 
+// TODO: debe detectar numerosa de mas de un digito
+
 List<dynamic> convertStL(String s) {
   List<dynamic> b = [];
-  //Convierte los numeros del string
-  // a int o double para despues hacer las operaciones
+  //Convierte los numeros del string a num
+
   for (var i = 0; i < s.length; i++) {
     if (int.tryParse(s[i]) is int) {
       num s1 = int.parse(s[i]);

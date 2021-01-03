@@ -1,9 +1,11 @@
 import 'ope.dart' as ope;
+import 'package:test/test.dart';
 
 main(List<String> args) {
-  var f = '9*3*4(2/7*3)';
+  var f = '4 + 3(1 × 3(5 × 2)(3 + 5(4 ÷ 2) + 3 - 2(3 × 2) + 1) - 5)';
+  // f.replaceAll(' ', '');
   List l2 = ope.convertStL(f);
-  // print(l2);
+  print(l2);
   var o2 = obtOrden(l2);
   print(o2);
 }
@@ -45,12 +47,16 @@ Map obtOrden(List f) {
         if (f[i - 1] == ')') {
           continue;
         }
+        if (indexA.isEmpty) {
+          continue;
+        }
         orden[auxi] = [indexA.last, i];
         auxi += 1;
         // print(orden);
         indexA.clear();
         // print(orden);
       }
+      // print(orden);
     }
   }
   return orden;

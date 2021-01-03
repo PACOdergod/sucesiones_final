@@ -32,7 +32,7 @@ List limpParentesis(List f, Map map) {
     for (var i = 0; i < parenList.length; i++) {
       int actualIndex = parenList[i];
       var actualList = f[actualIndex];
-      print(actualIndex);
+      // print(actualIndex);
 
       if (parenList[i] == largo) {
         if (actualList == ')') {
@@ -47,7 +47,6 @@ List limpParentesis(List f, Map map) {
 
       if (actualList == '(') {
         var anterior = f[actualIndex - 1];
-        print(anterior);
 
         // si tiene un parentesis anterio lo cambia por *
         // si tiene un numero lo cambia por *
