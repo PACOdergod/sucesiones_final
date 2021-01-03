@@ -14,7 +14,6 @@ Map obtOrden(List f) {
   // TODO: cuando el ultimo elemento es un parentesis falla
 
   // los ( == )
-  // cambiar el if == 0
 
   var indexA = [];
   int auxi = 0;
@@ -37,8 +36,12 @@ Map obtOrden(List f) {
       if (f[i] == '(') {
         indexA.add(i);
       }
-      if (i == f.length - 1 && f[i - 1] != ')') {
-        break;
+      if (i == f.length - 1) {
+        if (indexA.isEmpty) {
+          break;
+        } else if (indexA.isNotEmpty) {
+          orden[auxi] = [indexA.last, i];
+        }
       }
 
       if (f[i] == ')') {

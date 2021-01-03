@@ -11,7 +11,7 @@ main(List<String> args) {
   var s1 = [2, 3, 7, 20, 32, 43];
   var s2 = [1, 7, 11];
 
-  var f = '(3+1+5)*3*4((2/4*4)/(2+5)3)';
+  var f = '9*3*4(2/7*3)';
 
   resolverForm(f);
 }
