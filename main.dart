@@ -11,7 +11,7 @@ main(List<String> args) {
   // var f = '9*3*4(2/7*3)';
   var f = '4 + 3(1 × 3(5 × 2)(3 + 5(4 ÷ 2) + 3 - 2(3 × 2) + 1) - 5)';
 
-  resolverForm(f);
+  // resolverForm(f);
 }
 
 void resolverForm(String f) {
@@ -28,13 +28,6 @@ void resolverForm(String f) {
     List l3 = limParens.limpParentesis(r2, m2);
     print('despues de limpiar parentesis: $l3');
   }
-
-  // Map m3 = obtOrd.obtOrden(l3);
-  // print(m3);
-  // List r3 = resolvOpe(m3, l3);
-  // print(r3);
-  // List l4 = limParens.limpParentesis(r3, m3);
-  // print('despues de limpiar parentesis: $l4');
 
   if (!l2.contains('(')) {
     // print('termnar');
