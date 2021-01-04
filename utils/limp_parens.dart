@@ -1,9 +1,10 @@
-import 'ope.dart' as ope;
+import 'limp_form.dart';
+
 import 'obt_orden.dart' as obtOrd;
 
 main(List<String> args) {
   var f = '(  2)2*7*3+4(1+5(    9)(    2)+4)';
-  List f1 = ope.convertStL(f);
+  List f1 = convertStL(f);
   var m = obtOrd.obtOrden(f1);
   print(f1);
   // print(m);

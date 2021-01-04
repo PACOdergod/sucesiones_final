@@ -1,10 +1,10 @@
-import 'ope.dart' as ope;
-import 'package:test/test.dart';
+import 'limp_form.dart';
 
 main(List<String> args) {
   var f = '4 + 3(1 × 3(5 × 2)(3 + 5(4 ÷ 2) + 3 - 2(3 × 2) + 1) - 5)';
   // f.replaceAll(' ', '');
-  List l2 = ope.convertStL(f);
+  print(f);
+  List l2 = convertStL(f);
   print(l2);
   var o2 = obtOrden(l2);
   print(o2);

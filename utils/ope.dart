@@ -11,24 +11,6 @@
 //   print(r);
 // }
 
-// TODO: debe detectar numerosa de mas de un digito
-
-List<dynamic> convertStL(String s) {
-  List<dynamic> b = [];
-  //Convierte los numeros del string a num
-
-  for (var i = 0; i < s.length; i++) {
-    if (int.tryParse(s[i]) is int) {
-      num s1 = int.parse(s[i]);
-      // print(s1);
-      b.add(s1);
-    } else {
-      b.add(s[i]);
-    }
-  }
-  return b;
-}
-
 List resolverMD(List b) {
   for (var i = 0; i < b.length; i++) {
     if (b[i] == '*') {
