@@ -1,17 +1,13 @@
-import 'dart:collection';
-
-import "package:test/test.dart";
-
-// TODO: debe detectar numerosa de mas de un digito
+// TODO: debe detectar numeros decimales
 
 List<dynamic> convertStL(String s) {
   List<dynamic> b = [];
 
   var i1 = new List();
+
   loop:
   for (var i = 0; i < s.length; i++) {
     if (int.tryParse(s[i]) is int) {
-      //Convierte los numeros del string a num si se puede
       i1.add(i);
       String numero;
       num s1;
@@ -48,7 +44,7 @@ List<dynamic> convertStL(String s) {
 }
 
 main(List<String> args) {
-  var f = '4116445 + 134848 - 6545448';
+  var f = '4116445 + 134848(8484+5848(4/65465)) - 6545448';
   List l = convertStL(f);
   for (var i in l) {
     print('el valor es: $i y su tipo es: ${i.runtimeType}');
