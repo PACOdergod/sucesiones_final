@@ -1,7 +1,7 @@
 import 'utils/limp_parens.dart' as limParens;
 import 'utils/obt_orden.dart' as obtOrd;
 import 'utils/resolv_ope.dart';
-import 'utils/limp_form.dart';
+import 'utils/convertStL.dart';
 import 'utils/ope.dart';
 
 main(List<String> args) {
@@ -11,7 +11,7 @@ main(List<String> args) {
   // var f = '9*3*4(2/7*3)';
   var f = '4 + 3(1 × 3(5 × 2)(3 + 5(4 ÷ 2) + 3 - 2(3 × 2) + 1) - 5)';
 
-  // resolverForm(f);
+  resolverForm(f);
 }
 
 void resolverForm(String f) {
