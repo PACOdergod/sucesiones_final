@@ -51,7 +51,7 @@ List<dynamic> convertStL(String s) {
 }
 
 main(List<String> args) {
-  var f = '454 + 543(1×345(5× 2)(3 + 5(4 ÷ 2554) + 3 - 2(3 × 2) + 1) - 5)';
+  var f = '454 + 543(1×345(5× 2)(3 + 5(4 ÷ 2554.545) + 3 - 2(3 × 2) + 1) - 5)';
   List l = convertStL(f);
   for (var i in l) {
     print('el valor es: $i y su tipo es: ${i.runtimeType}');
