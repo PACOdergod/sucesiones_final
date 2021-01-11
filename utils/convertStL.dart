@@ -2,14 +2,15 @@
 
 List<dynamic> convertStL(String s) {
   List<dynamic> b = [];
-
   var aux = new List();
+
   for (var i = 0; i < s.length; i++) {
     //Convierte los numeros del string a num si se puede
     if (int.tryParse(s[i]) is int) {
       String numero;
       num s1;
-      if (i == 0) {
+
+      if (i == 0 && int.tryParse(s[i + 1]) == null) {
         s1 = int.parse(s[i]);
         b.add(s1);
         continue;
@@ -50,8 +51,7 @@ List<dynamic> convertStL(String s) {
 }
 
 main(List<String> args) {
-  var f =
-      '484848 + 3415(1 × 3(5 × 2)(3 + 5(4 ÷ 2) + 38688 - 2(3 × 2) + 1) - 5)';
+  var f = '454 + 543(1×345(5× 2)(3 + 5(4 ÷ 2554) + 3 - 2(3 × 2) + 1) - 5)';
   List l = convertStL(f);
   for (var i in l) {
     print('el valor es: $i y su tipo es: ${i.runtimeType}');
